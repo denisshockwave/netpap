@@ -1,0 +1,357 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta content='CodeKece' name='Author'/>
+		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="/favicon.ico" type="image/x-icon">
+        <title>Netpap kiosk</title>
+		<link rel="stylesheet" href="b3/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/style.css">
+		<style type="text/css">
+		.table{
+			font-size: 13px;
+		}
+		</style>
+	</head>
+
+	<body>
+		<script language="JavaScript">
+		<!--
+			function openLogin() {
+			if (window.name != 'hotspot_logout') return true;
+			open('$(link-login)', '_blank', '');
+			window.close();
+			return false;
+			}
+		//-->
+		</script>
+		<div class="container">
+			<div class="row wrapper">
+				<div class="col-sm-4">
+					<div class="login">
+						<h3>Thank You</h3>
+						<small>you have just logged out</small>
+						<hr/>
+						<table class="table table-bordered table-condensed">
+							<tr><td align="right">Username</td><td width="20px" class="text-center">:</td><td>$(username)</td></tr>
+							<tr><td align="right">IP Address</td><td width="20px" class="text-center">:</td><td>$(ip)</td></tr>
+							<tr><td align="right">MAC Address</td><td width="20px" class="text-center">:</td><td>$(mac)</td></tr>
+							<tr><td align="right">Session Time</td><td width="20px" class="text-center">:</td><td>$(uptime)</td></tr>
+							$(if session-time-left)
+							<tr><td align="right">Time left</td><td width="20px" class="text-center">:</td><td>$(session-time-left)</td></tr>
+							$(endif)
+							<tr><td align="right">Bytes up/down</td><td width="20px" class="text-center">:</td><td>$(bytes-in-nice) / $(bytes-out-nice)</td></tr>
+						</table>
+						<form action="$(link-login)" name="login" onSubmit="return openLogin()">
+							<div class="row">
+								<div class="col-sm-6">
+                                    <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+                                    <a class="btn btn-info" href="https://netpap.co.ke/netpap/pay/home/721814099/">Buy More Wifi Bundles</a>
+
+
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="col-sm-8">
+					<div class="row">
+						 <h3 id="media-title1"></h3>
+              	<span id="target1"></span>
+				</div>
+			</div>
+		</div>
+		<nav class="navbar navbar-default navbar-fixed-bottom">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu" aria-expanded="false">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar top-bar"></span>
+						<span class="icon-bar middle-bar"></span>
+						<span class="icon-bar bottom-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#">
+						<img alt="Code Kece" src="img/logo.png" class="img-responsive">
+					</a>
+				</div>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="menu">
+					<ul class="nav navbar-nav navbar-right">
+					<li><a href="about.html">ABOUT</a></li>
+					<li><a href="login.html">LOGIN</a></li>
+					</ul>
+				</div><!-- /.navbar-collapse -->
+			</div>
+		</nav>
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script src="b3/js/bootstrap.min.js"></script>
+		 <script type="text/javascript">
+        var start;
+        var images_viewed=[];
+
+
+            $('.modal').each(function () {
+                var t = $(this),
+                    d = t.find('.modal-dialog'),
+                    fadeClass = (t.is('.fade') ? 'fade' : '');
+                // render dialog
+                t.removeClass('fade')
+                    .addClass('invisible')
+                    .css('display', 'block');
+                // read and store dialog height
+                d.data('height', d.height());
+                // hide dialog again
+                t.css('display', '')
+                    .removeClass('invisible')
+                    .addClass(fadeClass);
+            });
+            // phase two - set margin-top on every dialog show
+            $('.modal').on('show.bs.modal', function () {
+                var t = $(this),
+                    d = t.find('.modal-dialog'),
+                    dh = d.data('height'),
+                    w = $(window).width(),
+                    h = $(window).height();
+                // if it is desktop & dialog is lower than viewport
+                // (set your own values)
+                if (w > 380 && (dh + 60) < h) {
+                    d.css('margin-top', Math.round(0.96 * (h - dh) / 2));
+                } else {
+                    d.css('margin-top', '');
+                }
+
+
+            });
+
+            $(document).ready(function(){
+              start =(new Date()).getTime();
+              function setCookie(cname, cvalue, exdays) {
+                  var d = new Date();
+                  d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+                  var expires = "expires="+d.toUTCString();
+                  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+              }
+              function getCookie(cname){
+                var name = cname + "=";
+                var decodedCookie = decodeURIComponent(document.cookie);
+                var ca = decodedCookie.split(';');
+                for(var i = 0; i < ca.length; i++) {
+                    var c = ca[i];
+                    while (c.charAt(0) == ' ') {
+                        c = c.substring(1);
+                    }
+                    if (c.indexOf(name) == 0) {
+                        return c.substring(name.length, c.length);
+                    }
+                }
+                return "";
+              }
+
+
+
+
+
+              $("#free_offer").click(function(){
+              var num = $("#offer_number").val();
+              console.log(num);
+              $("#loader").show();
+              if(num=="")
+              {
+                $("#offer-display").html("<div class='alert alert-info'>Kindly ,specify your number </div>");
+                $("#loader").hide();
+                return false;
+              }
+              if(getCookie("gotOffer") != "")
+              {
+                  $("#offer-display").html("<div class='alert alert-info'>Dear customer ,You have already used your offer. </div>");
+                  $("#loader").hide();
+                  return false;
+              }
+
+                $.ajax({
+                    type: "POST",
+                    dataType: "json",
+                    data:{'owner':"joylinkrongai",'phone':num,'username':getCookie("user")},
+                    url: "https://wifikiosk.netpap.co.ke/api/media/getOffer/",
+                    success: function(data){
+                      $("#offer-display").html("<div class='alert alert-info'>Your request has been processed username: "+data.username+" and password: "+data.password+"</div>");
+                      console.log(data.status);
+                      if(data.status=="success")
+                      {
+                       $("#username").val(data.username);
+                       $("#password").val(data.password);
+                       $("#loader").hide();
+                       setCookie("gotOffer",getCookie("user"),"7");
+                       $("#btn-submit").click();
+                     }
+                     else {
+                         $("#offer-display").html("<div class='alert alert-info'>"+data.message+" </div>");
+                          $("#loader").hide();
+                     }
+
+                    },
+                    error:function(xhr, status, error)
+                    {
+                        $("#loader").hide();
+                        alert(getCookie("user"));
+  //                       var err = JSON.parse(xhr.responseText);
+  //  alert(err.Message);
+                      //  $("#offer-display").html("<div class='alert alert-info'>There was a network error "+data+".Kindly contact admin </div>");
+                    }
+                    });
+
+                return false;
+
+              });
+
+
+              $("#voucher").click(function(){
+                console.log("deni");
+                $("#hidden").show();
+                $("#media-panel").hide();
+                return false;
+
+              });
+              $("#offer").click(function(){
+                $("#offer-display").html("<div class='alert alert-info'>Get free bundles.Limited for first time users only.HURRY!!</div>");
+                  $("#media-panel").hide();
+                  $(".navbar-toggle").click();
+                $("#offer-panel" ).show();
+                $("#hidden" ).hide();
+
+                return false;
+
+              });
+              $("#about,#home").click(function(){
+                $("#hidden").hide();
+                $("#media-panel").show();
+
+              });
+               var owner=getCookie("owner");
+               if(owner == '')
+                  setCookie("owner",'joylinkrongai',"1");/*SET ROUTERNAME BUSINESSNAME */
+
+               console.log(owner);
+               var srv="https://wifikiosk.netpap.co.ke/api/media/"+owner; /*API URL without trailing forward slash */
+               var srvim="https://wifikiosk.netpap.co.ke";
+               var user=getCookie("user");
+               var USERSET='YES';
+               if (user== ""){
+                 USERSET='NO';
+               }
+               else{
+                 USERSET='YES';
+                 console.log("denis");
+
+               }
+               $.ajax({
+                   type: "GET",
+                   dataType: "json",
+                   url: srv,
+                   success: function(data){
+                     $.each(data,function(k, v){
+
+                       console.log(data);
+                       console.log(k);
+                       console.log(v.campaign_name);
+                       console.log(v.campaign_type);
+                       if(v.campaign_type=="IMAGE")
+                       {
+                         var img = srvim + v.image_url;
+                         $("#target1").html("<img style='width:562px;height:219' class=\"med-img img img-responsive\" src=" + img + "  >").attr('alt', v.id);
+                         $("#target1").wrap("<a  class=\"target-link\" target=\"_blank\"  href=" + v.link_url + "></a>");
+                        //  $("#media-title1").html(v.name);
+                       }
+                       else if (v.campaign_type=="VIDEO"){
+                       $("#target1").html(v.link_url).attr('alt', v.id);
+                       }
+                       else if (v.campaign_type=="LINKS"){
+                       $("#target1").html(v.link_url).attr('alt', v.id);
+                       }
+                       });
+
+                       update_views();
+
+                       setUser();
+                       console.log("set username")
+
+                   },
+                   error: function(e){
+                      setUser();
+                       console.log("These girls aint loyal");
+                   }
+              });
+
+              function update_views()
+              {
+              // var  media_viewed=JSON.stringify(images_viewed);
+              //
+              // console.log("images field just above")
+              //
+              // $.ajax({
+              // 				type: "POST",
+              // 				dataType: "json",
+              // 				url: srvim+"/media/medView/",
+              // 				data:{data:media_viewed,'user_device':jsonPayload,'user':user,'owner':owner},
+              // 				success: function(data){
+              // 						console.log('Items added');
+              // 				},
+              // 				error: function(e){
+              // 						console.log(e.message);
+              // 				}
+              // });
+              }
+
+              $(".clicked").click(function()
+              {
+              var id=$(this).attr('alt');
+              $.ajax({
+                    type: "POST",
+                dataType: "json",
+                    url: srvim+"/media/clicks/", data:{myData: id,'user':user,'owner':owner},
+                    success: function(data)
+                    {
+                          console.log(data);
+                    },
+                    error: function(e)
+                    {
+                    console.log(e.message);
+                    }
+              })
+              ;
+              });
+
+
+
+               function setUser()
+               {
+                  console.log("Run set cookie");
+                 console.log(getCookie('user'));
+                 if(getCookie('user') == '')
+                 {
+                     console.log("REGISTRATION");
+                     $.ajax({
+                         type: "POST",
+                         dataType: "json",
+                         url: "https://wifikiosk.netpap.co.ke/api/media/username/",
+                         success: function(data){
+                           console.log("fetch sername")
+                           console.log(data);
+                           setCookie("user",data.username);
+
+                         },
+                         error:function(data)
+                         {   console.log("error fetching username");
+                             $("#offer-display").html("<div class='alert alert-info'>There was a network error.Kindly contact admin </div>");
+                         }
+                         });
+
+                   }
+               }
+
+            });
+        </script>
+	</body>
+</html>

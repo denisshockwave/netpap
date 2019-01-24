@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <!-- This file has been downloaded from Bootsnipp.com. Enjoy! -->
+    <title>Login Screen with Form - Bootsnipp.com</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+
+.login-block{
+    background: #009e5f;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to bottom, #FFB88C, #009e5f);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to bottom, #FFB88C, #009e5f); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+float:left;
+width:100%;
+padding : 50px 0;
+}
+.banner-sec{background:url(img/sema-wifi-login.jpg)  no-repeat center; background-size: contain; min-height:500px; border-radius: 0 10px 10px 0; padding:0;}
+.container{background:#fff; border-radius: 10px; box-shadow:5px rgba(0,0,0,0.1);}
+.carousel-inner{border-radius:0 10px 10px 0;}
+.carousel-caption{text-align:left; left:5%;}
+.login-sec{padding: 50px 30px; position:relative;}
+.login-sec .copy-text{position:absolute; width:80%; bottom:20px; font-size:13px; text-align:center;}
+.login-sec .copy-text i{color:#FEB58A;}
+.login-sec .copy-text a{color:#E36262;}
+.login-sec h2{margin-bottom:30px; font-weight:800; font-size:30px; color: #009e5f;}
+.login-sec h2:after{content:" "; width:100px; height:5px; background:#FEB58A; display:block; margin-top:20px; border-radius:3px; margin-left:auto;margin-right:auto}
+.btn-login{background: #009e5f; color:#fff; font-weight:600;}
+.banner-text{width:70%; position:absolute; bottom:40px; padding-left:20px;}
+.banner-text h2{color:#fff; font-weight:600;}
+.banner-text h2:after{content:" "; width:100px; height:5px; background:#FFF; display:block; margin-top:20px; border-radius:3px;}
+.banner-text p{color:#fff;}
+    </style>
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</head>
+<body>
+  $(if chap-id)
+<form name="sendin" action="$(link-login-only)" method="post">
+<input type="hidden" name="username" />
+<input type="hidden" name="password" />
+<input type="hidden" name="dst" value="https://netpap.co.ke/" />
+<input type="hidden" name="popup" value="true" />
+</form>
+<script type="text/javascript" src="md5.js"></script>
+<script type="text/javascript">
+<!--
+function doLogin() {
+document.sendin.username.value = document.login.username.value;
+document.sendin.password.value = hexMD5('$(chap-id)' + document.login.password.value + '$(chap-challenge)');
+document.sendin.submit();
+return false;
+}
+//-->
+</script>
+$(endif)
+
+<section class="login-block">
+    <div class="container">
+	<div class="row">
+		<div class="col-md-4 login-sec">
+
+
+		    <h2 class="text-center"> <img src="img/sema-wifi.png" width="100px"><br />Login Now</h2>
+
+        $(if error)
+        <div class="alert alert-info" role="alert"><small>$(error)</small></div>
+        $(endif)
+        <form class="login-form" name="login" action="$(link-login-only)" method="post"
+          $(if chap-id) onSubmit="return doLogin()" $(endif)>
+          <input type="hidden" name="dst" value="https://netpap.co.ke/" />
+          <input type="hidden" name="popup" value="true" />
+        <div class="form-group">
+          <label for="exampleInputEmail1" class="text-uppercase">Username</label>
+          <input id="username" type="text" class="form-control" >
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1" class="text-uppercase">Password</label>
+          <input id="password" type="password" class="form-control" >
+        </div>
+
+
+    <div class="form-group">
+
+    <button id="btn-submit" type="submit" class="btn btn-login btn-block float-right">Login &amp; Start Browsing</button>
+  </div>
+<div class="form-group" style="margin-top: 10px !important;">
+    <center><label for="exampleInputPassword1" class="text-uppercase"> - OR - </label></center>
+     <a href="https://netpap.co.ke/netpap/pay/homabay/brainverse/" >
+       <button type="submit"  class="btn btn-warning btn-block float-right">BUY BUNDLES</button>
+    </a>
+  </div>
+
+
+</form>
+<div class="copy-text">Powered by <a href="https://www.brainversetechnologies.co.ke">Brainverse</a></div>
+		</div>
+		<div class="col-md-8 banner-sec">
+            <!--<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                 <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                  </ol>
+            <div class="carousel-inner" role="listbox">
+    <div class="carousel-item active">
+      <img class="d-block img-fluid" src="https://www.ba4b.com/drive/sema-wifi-login.jpg" alt="SEMA Wifi">
+      <div class="carousel-caption d-none d-md-block">
+        <div class="banner-text">
+            <h2>This is Heaven</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
+        </div>
+  </div>
+    </div>-->
+
+
+      </div>
+
+		</div>
+	</div>
+</div>
+</section>
+
+<script>
+  $(document).ready(function() {
+  $(".btn-pref .btn").click(function () {
+      $(".btn-pref .btn").removeClass("btn-primary").addClass("btn-default");
+      // $(".tab").addClass("active"); // instead of this do the below
+      $(this).removeClass("btn-default").addClass("btn-primary");
+  });
+
+
+    var url=window.location.href;
+    console.log(url);
+    var u=url.split("?");
+    var credentials=u[1]
+    console.log(u);
+    if (credentials.charAt(0)=="@")
+    {
+      creds=credentials.split("_");
+      username=creds[0];
+      password=creds[1];
+      $("#username").val(username.substring(1));
+      $("#password").val(password);
+      console.log(username);
+      console.log(creds);
+      setTimeout(function() { $("#btn-submit").click();  }, 5000);
+
+    }
+
+
+  });
+</script>
+
+</body>
+</html>
