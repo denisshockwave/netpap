@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en-US">
+   <head>
+      <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+      <title>Netpap</title>
+      	<link rel="stylesheet" href="css/bootstrap.css" />
+
+
+      <!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800&subset=latin,latin-ext' rel='stylesheet' type='text/css'> -->
+      <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+
+<style>
+  body
+    {
+      background: #E5EBF2;
+    }
+
+  /* USER PROFILE PAGE */
+   .card {
+      margin-top: 20px;
+      padding: 30px;
+      background-color: rgba(214, 224, 226, 0.2);
+      -webkit-border-top-left-radius:5px;
+      -moz-border-top-left-radius:5px;
+      border-top-left-radius:5px;
+      -webkit-border-top-right-radius:5px;
+      -moz-border-top-right-radius:5px;
+      border-top-right-radius:5px;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+  }
+  .card.hovercard {
+      position: relative;
+      padding-top: 0;
+      overflow: hidden;
+      text-align: center;
+      background-color: #fff;
+      background-color: rgba(255, 255, 255, 1);
+  }
+  .card.hovercard .card-background {
+      height: 130px;
+  }
+  .card-background img {
+      -webkit-filter: blur(25px);
+      -moz-filter: blur(25px);
+      -o-filter: blur(25px);
+      -ms-filter: blur(25px);
+      filter: blur(25px);
+      margin-left: -100px;
+      margin-top: -200px;
+      min-width: 130%;
+  }
+  .card.hovercard .useravatar {
+      position: absolute;
+      top: 15px;
+      left: 0;
+      right: 0;
+  }
+  .card.hovercard .useravatar img {
+      width: 100px;
+      height: 100px;
+      max-width: 100px;
+      max-height: 100px;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      border-radius: 50%;
+      border: 5px solid rgba(255, 255, 255, 0.5);
+  }
+  .card.hovercard .card-info {
+      position: absolute;
+      bottom: 14px;
+      left: 0;
+      right: 0;
+  }
+  .card.hovercard .card-info .card-title {
+      padding:0 5px;
+      font-size: 20px;
+      line-height: 1;
+      color: #262626;
+      background-color: rgba(255, 255, 255, 0.1);
+      -webkit-border-radius: 4px;
+      -moz-border-radius: 4px;
+      border-radius: 4px;
+  }
+  .card.hovercard .card-info {
+      overflow: hidden;
+      font-size: 12px;
+      line-height: 20px;
+      color: #737373;
+      text-overflow: ellipsis;
+  }
+  .card.hovercard .bottom {
+      padding: 0 20px;
+      margin-bottom: 17px;
+  }
+  .btn-pref .btn {
+      -webkit-border-radius:0 !important;
+  }
+
+
+</style>
+   </head>
+  <body>
+    $(if chap-id)
+<form name="sendin" action="$(link-login-only)" method="post">
+  <input type="hidden" name="username" />
+  <input type="hidden" name="password" />
+  <input type="hidden" name="dst" value="https://netpap.co.ke/" />
+  <input type="hidden" name="popup" value="true" />
+</form>
+<script type="text/javascript" src="md5.js"></script>
+<script type="text/javascript">
+<!--
+  function doLogin() {
+  document.sendin.username.value = document.login.username.value;
+  document.sendin.password.value = hexMD5('$(chap-id)' + document.login.password.value + '$(chap-challenge)');
+  document.sendin.submit();
+  return false;
+  }
+//-->
+</script>
+$(endif)
+<!-- Static navbar -->
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#"><img src="img/netpap.png" style="width:50px;margin-top:-10px;">Netpap wifi kiosk</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+
+        <ul class="nav navbar-nav navbar-right">
+          <li class="active"><a href="https://netpap.co.ke">Wifi kiosk</span></a></li>
+          <li><a href="#"><small>Powered by Rafikihost</small></a></li>
+
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div><!--/.container-fluid -->
+  </nav>
+    <div style="">
+    <div class="col-lg-6 col-sm-6 col-md-6 col-md-offset-3">
+        <div class="card hovercard">
+            <div class="card-background">
+                <img data="landing" id="landing" class="card-bkimg" alt="" src="img/landing.png">
+                <!-- http://lorempixel.com/850/280/people/9/ -->
+            </div>
+            <div class="useravatar">
+                <img alt="" src="img/mrt.png">
+            </div>
+            <div class="card-info"> <span class="card-title">Wifi Kiosk</span>
+
+            </div>
+        </div>
+        <div class="btn-pref btn-group btn-group-justified btn-group-lg" role="group" aria-label="...">
+
+            <div class="btn-group" role="group">
+                <button type="button" id="favorites" class="btn btn-default" href="#tab1" data-toggle="tab"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                    <div class="hidden-xs">Log in</div>
+                </button>
+            </div>
+            <div class="btn-group" role="group">
+                <button type="button" id="following" class="btn btn-default" href="#tab3" data-toggle="tab"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+                    <div class="hidden-xs"> Buy voucher</div>
+                </button>
+            </div>
+        </div>
+
+            <div class="well">
+          <div class="tab-content">
+            <div class="tab-pane fade in active" id="tab1">
+              $(if error)
+              <div class="alert alert-info" role="alert"><small>$(error)</small></div>
+              $(endif)
+              <div class="alert alert-info">
+              <h3>CLICK   <a class="btn btn-info btn-sm" href="https://netpap.co.ke/netpap/pay/kejani/rafikihost/">Buy Wifi Bundles</a>
+ to get ACCESS</h3>
+
+            </div>
+              <form name="login" action="$(link-login-only)" method="post"
+                $(if chap-id) onSubmit="return doLogin()" $(endif)>
+                <input type="hidden" name="dst" value="https://netpap.co.ke/" />
+                <input type="hidden" name="popup" value="true" />
+                <div class="form-group">
+                  <label>Username</label>
+                  <input id="username" type="text"  class="form-control" name="username" >
+                </div>
+                <div class="form-group">
+                  <label>Password</label>
+                  <input id="password" type="password"  class="form-control" name="password">
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6">
+                    <button id="btn-submit" type="submit" class="btn btn-primary btn-block">Sign In</button>
+                  </div>
+                  <div class="col-md-6">
+                    <a class="btn btn-info btn-block" href="https://netpap.co.ke/netpap/pay/kejani/rafikihost/">Buy Wifi Bundles</a>
+
+                  </div>
+
+                </div>
+              </form>
+
+              <!-- <h3 id="media-title1"></h3>
+              	<span id="target1"></span> -->
+            </div>
+
+            <div class="tab-pane fade in" id="tab3">
+
+              <div class="row">
+
+                <div class="col-md-6 col-sm-6">
+                  <div class="row">
+
+                    <div class="col-md-6">
+                      <a class="btn btn-info btn-block" href="https://netpap.co.ke/netpap/pay/kejani/rafikihost/">Buy Wifi Bundles</a>
+
+                    </div>
+
+                  </div>
+                    <!-- <a data-toggle="collapse" class="btn btn-info" href="#collapse1">Test our wifi</a> -->
+                </div>
+
+              </div>
+              <br>
+              <div id="collapse1" class="panel-collapse collapse">
+                <div class="panel-body">
+                  <div id="offer-display">
+                  </div>
+                  <div class="alert alert-info" id="status">Enter your phone  number to receive the free offer.HURRY!!!</div>
+                  <img  style="display:none;" id="loader" src="img/loading.gif" width="30" height="30">
+                  <form action="" method="POST">
+                    <div class="alert alert-info">
+
+                  <label>Enter phone number to receive</label>
+                  <div class="form-group">
+                      <input class="form-control" type="number" id="offer_number" name="phone" value="07" required="">
+                  </div>
+                  <br>
+                  <br>
+                  <input type="submit" id="free_offer" class="btn btn-info" name="get_bundles" value="Get Me Bundles">
+                  <a class="btn btn-info" href="https://netpap.co.ke/netpap/pay/kejani/rafikihost/">Buy Wifi Bundles</a>
+                  <span id="netpap-root" data-hotspot="kejani" data-owner="hotspot" data-mac-address="$(mac_address)" data-banner-type="landing"></span>
+                </form>
+
+                </div>
+
+              </div>
+
+              <br>
+              <div class="row">
+
+                <div class="col-md-6 col-sm-6">
+                                            <!--hotspot,user account-->
+                      <a class="btn btn-info" href="https://netpap.co.ke/netpap/pay/kejani/rafikihost/"><em style="color:red">BUY</em> Wifi Bundles</a>
+                    <a class="btn btn-info" href="http://netpap.co.ke/netpap/pay/kejani/rafikihost/"><em style="color:red">BUY</em> Wifi Bundles</a>
+                </div>
+
+              </div>
+
+             </div>
+          </div>
+        </div>
+
+        </div>
+      </div>
+
+<script>
+  $(document).ready(function() {
+  $(".btn-pref .btn").click(function () {
+      $(".btn-pref .btn").removeClass("btn-primary").addClass("btn-default");
+      // $(".tab").addClass("active"); // instead of this do the below
+      $(this).removeClass("btn-default").addClass("btn-primary");
+  });
+
+
+    var url=window.location.href;
+    console.log(url);
+    var u=url.split("?");
+    var credentials=u[1]
+    console.log(u);
+    if (credentials.charAt(0)=="@")
+    {
+      creds=credentials.split("_");
+      username=creds[0];
+      password=creds[1];
+      $("#username").val(username.substring(1));
+      $("#password").val(password);
+
+    }
+
+
+  });
+</script>
+<script src="js/netpap.js"></script>
+
+   </body>
+</html>
