@@ -9,7 +9,7 @@
    
 		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 		<link rel="icon" href="/favicon.ico" type="image/x-icon">
-        <title>BYF Telecom kiosk</title>
+        <title>CheapNet Telecom kiosk</title>
 		<link rel="stylesheet" href="b3/css/bootstrap.min.css">
         <link rel="stylesheet" href="css/style.css">
 		<style type="text/css">
@@ -22,7 +22,8 @@
 
 			function openLogout() {
 			if (window.name != 'hotspot_status') return true;
-				open('http://byf.net/logout', 'hotspot_logout', 'toolbar=0,location=0,directories=0,status=0,menubars=0,resizable=1,width=280,height=250');
+				open('$(link-login)/logout', 'hotspot_logout',
+				'toolbar=0,location=0,directories=0,status=0,menubars=0,resizable=1,width=280,height=250');
 			window.close();
 			return false;
 			}
@@ -62,9 +63,9 @@
 							<div class="row">
 								<div class="col-sm-6">
               <button type="submit" class="btn btn-primary btn-block">Sign Out</button>
-              <a class="btn btn-info" href="https://account.netpap.co.ke/netpap/pay/kyembenibaptist/byf/">Buy More Wifi
+              <a class="btn btn-info" href="https://account.netpap.co.ke/netpap/pay/bs/cheapnet/">Buy More Wifi
               	Bundles</a>
-              <span id="netpap-root" data-hotspot="kyembenibaptist" data-owner="byf" data-mac-address="$(mac)"
+              <span id="netpap-root" data-hotspot="cheapnet" data-owner="bs" data-mac-address="$(mac)"
               	data-banner-name="LOGIN"></span>
 
 								</div>
