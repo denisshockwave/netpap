@@ -4,12 +4,7 @@
       <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
       <title>Netpap</title>
-      	<link rel="stylesheet" href="css/bootstrap.css" />
-
-
-      <!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800&subset=latin,latin-ext' rel='stylesheet' type='text/css'> -->
-      <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
-      <script src="js/bootstrap.min.js"></script>
+    
 
 <style>
   body
@@ -139,7 +134,7 @@ $(endif)
 
         <ul class="nav navbar-nav navbar-right">
           <li class="active"><a href="https://netpap.co.ke">Wifi kiosk</span></a></li>
-          <li><a href="#"><small>Powered by tharakanithi</small></a></li>
+          <li><a href="#"><small>Powered by Rafikihost</small></a></li>
 
         </ul>
       </div><!--/.nav-collapse -->
@@ -171,18 +166,21 @@ $(endif)
                 <button type="button" id="following" class="btn btn-default" href="#tab3" data-toggle="tab"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
                     <div class="hidden-xs"> Buy voucher</div>
                 </button>
+
+
             </div>
         </div>
 
             <div class="well">
           <div class="tab-content">
             <div class="tab-pane fade in active" id="tab1">
+
               $(if error)
               <div class="alert alert-info" role="alert"><small>$(error)</small></div>
               $(endif)
               <div class="alert alert-info">
-              <h3>CLICK   <a class="btn btn-info btn-sm" href="https://netpap.co.ke/netpap/pay/equitychuka/tharakanithi/">Buy Wifi Bundles</a>
- to get ACCESS</h3>
+              <h3>CLICK   <a class="btn btn-danger btn-sm" href="https://netpap.co.ke/netpap/pay/legacy/tharakanithi/">Buy Wifi Bundles</a>
+  or  CLICK   <a class="btn btn-primary btn-sm" href="https://netpap.co.ke/network/signup/equity/tharakanithi/">TEST Wifi Bundles</a></h3>
 
             </div>
               <form name="login" action="$(link-login-only)" method="post"
@@ -199,11 +197,14 @@ $(endif)
                 </div>
 
                 <div class="row">
-                  <div class="col-md-6">
+                  <div class="col-md-6 col-xs-12">
                     <button id="btn-submit" type="submit" class="btn btn-primary btn-block">Sign In</button>
                   </div>
-                  <div class="col-md-6">
-                    <a class="btn btn-info btn-block" href="https://netpap.co.ke/netpap/pay/equitychuka/tharakanithi/">Buy Wifi Bundles</a>
+                  <div class="col-md-3 col-xs-6">
+                    <a class="btn btn-danger btn-block" href="https://netpap.co.ke/netpap/pay/legacy/tharakanithi/">Buy Wifi Bundles</a>
+                  </div>
+                    <div class="col-md-3 col-xs-6">
+                    <a class="btn btn-default btn-block" href="https://netpap.co.ke/network/signup/equity/tharakanithi/">Test Wifi Bundles</a>
 
                   </div>
 
@@ -222,9 +223,14 @@ $(endif)
                   <div class="row">
 
                     <div class="col-md-6">
-                      <a class="btn btn-info btn-block" href="https://netpap.co.ke/netpap/pay/equitychuka/tharakanithi/">Buy Wifi Bundles</a>
+                      <a class="btn btn-danger btn-block" href="https://netpap.co.ke/netpap/pay/legacy/tharakanithi/">Buy Wifi Bundles</a>
 
                     </div>
+                    <div class="col-md-6">
+                      <a class="btn btn-default btn-block" href="https://netpap.co.ke/network/signup/equity/tharakanithi/">Test Wifi Bundles</a>
+
+                    </div>
+
 
                   </div>
                     <!-- <a data-toggle="collapse" class="btn btn-info" href="#collapse1">Test our wifi</a> -->
@@ -248,8 +254,8 @@ $(endif)
                   <br>
                   <br>
                   <input type="submit" id="free_offer" class="btn btn-info" name="get_bundles" value="Get Me Bundles">
-                  <a class="btn btn-info" href="https://netpap.co.ke/netpap/pay/equitychuka/tharakanithi/">Buy Wifi Bundles</a>
-                  <span id="netpap-root" data-hotspot="equitychuka" data-owner="tharakanithi" data-mac-address="$(mac)" data-banner-name="login"></span>
+                  <a class="btn btn-info" href="https://netpap.co.ke/netpap/pay/legacy/tharakanithi/">Buy Wifi Bundles</a>
+                  <span id="netpap-root" data-hotspot="legacy" data-owner="tharakanithi" data-mac-address="$(mac)" data-banner-name="login"></span>
                 </form>
 
                 </div>
@@ -261,8 +267,8 @@ $(endif)
 
                 <div class="col-md-6 col-sm-6">
                                             <!--hotspot,user account-->
-                      <a class="btn btn-info" href="https://netpap.co.ke/netpap/pay/equitychuka/tharakanithi/"><em style="color:red">BUY</em> Wifi Bundles</a>
-                    <a class="btn btn-info" href="http://netpap.co.ke/netpap/pay/equitychuka/tharakanithi/"><em style="color:red">BUY</em> Wifi Bundles</a>
+                      <a class="btn btn-info" href="https://netpap.co.ke/netpap/pay/legacy/tharakanithi/"><em style="color:red">BUY</em> Wifi Bundles</a>
+                    <a class="btn btn-default" href="http://netpap.co.ke/netpap/pay/legacy/tharakanithi/"><em style="color:red">BUY</em> Wifi Bundles</a>
                 </div>
 
               </div>
@@ -283,25 +289,21 @@ $(endif)
   });
 
 
-    var url=window.location.href;
-    console.log(url);
-    var u=url.split("?");
-    var credentials=u[1]
-    console.log(u);
-    if (credentials.charAt(0)=="@")
-    {
-      creds=credentials.split("_");
-      username=creds[0];
-      password=creds[1];
-      $("#username").val(username.substring(1));
-      $("#password").val(password);
-
-    }
-
 
   });
 </script>
-<script src="js/netpap.js"></script>
+<script src="https://netpap.co.ke/static/js/netpap.js"></script>
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/59add5284854b82732fee282/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
 
-   </body>
+ </body>
 </html>

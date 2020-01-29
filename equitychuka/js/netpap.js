@@ -86,7 +86,7 @@ function checkCookie()
                     width=data['screenw'];
                   }
                   root1.html("<a class=\"netpap-space\"   netpap-data-value="+v.id+" netpap-data-key="+data['banner_name']+"  href="+v.redirect_url+"><img   style=\"width:"+width+"px;height:300px;\" data=\"landing\" id=\"landing\" class=\"card-bkimg\" "+v.campaign_name+" src="+data['url']+v.image_url+"></a>")
-
+                  data['campaign']=v.id;
                   //setCookie("img1",v.image_url,getExpiry(v.campaign_end));
                   root_header.html("<span style=color:white;>"+v.campaign_name+"</span>");
                   sendReport.push(v.id); //itesm that were viewed
@@ -118,6 +118,8 @@ function checkCookie()
         if((tem= ua.match(/version\/(\d+)/i))!= null) M.splice(1, 1, tem[1]);
         return M.join(' ');
     })();
+
+
     var visitor = getCookie("visitor");
     var banner_name=$("#netpap-root").attr("data-banner-name");
     var hotspot=$("#netpap-root").attr("data-hotspot");
@@ -130,12 +132,38 @@ function checkCookie()
     var screenw=screen.width;
     var start_session =new Date();
 
+    var url=window.location.href;
+
+    if(url.includes("?")){
+
+
+    var u=url.split("?");
+    var credentials=u[1]
+    console.log(u);
+    if (credentials.charAt(0)=="@")
+    {
+      creds=credentials.split("_");
+      username=creds[0];
+      password=creds[1];
+      $("#username").val(username.substring(1));
+      $("#password").val(password);
+
+      /* let us submit button after click */
+      setTimeout(function(){
+
+      $("#button-submit").click();
+      }, 5000);
+    }
+  }else{
+    /* not login page  */
+  }
+
 
 
     var device=getPlatformType();
 
 
-    var url="http://192.168.2.18:8000";
+    var url="http://192.168.2.32:8000";
     var data={"browser":browser,"os":os,"mac_address":mac_address,"banner_name":banner_name,
           "device":device,"screenw":screenw,"screenh":screenh,"hotspot":hotspot,"owner":owner,"url":url
           }
@@ -191,9 +219,10 @@ function  sendMediaReport(data)
   {
 
     $.ajax({
-      "url":data['url']+"/media/store/report/",
-      "data":data,
-      method:"POST"
+      url:data['url']+"/store/media/report/",
+      data:data,
+      method:"POST",
+      dataType:"json"
     }).done(function(){
 
 
@@ -223,17 +252,12 @@ function  sendMediaReport(data)
 
   $( window ).unload(function() {
     console.log("denis mwiti")
-    data['start_session']=start_session;
-    data['end_session']=new Date();
+    data['start_session']=start_session.getTime();
+    data['end_session']=new Date().getTime();
     //get all loaded images
-    var campaigns=[];
-    $(".netpap-space").each(function(k,v){
-    console.log(v)
-    campaigns.push($( this ).attr("netpap-data-value"));
+    var campaign= $(".netpap-space").attr("netpap-data-value");
 
-    });
-
-    data['campaign']=JSON.stringify(campaigns);
+    data['campaign']=campaign
     console.log(data)
     $.ajax({"url":url+"/store/media/session/",
             "data":data,
