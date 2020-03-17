@@ -1,0 +1,105 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="/favicon.ico" type="image/x-icon">
+        <title>SPRINKVILLE NETWORKS</title>
+		<link rel="stylesheet" href="b3/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/style.css">
+		<style type="text/css">
+		.table{
+			font-size: 13px;
+		}
+		</style>
+	</head>
+
+	<body>
+		<script language="JavaScript">
+		<!--
+			function openLogin() {
+			if (window.name != 'hotspot_logout') return true;
+			open('$(link-login)', '_blank', '');
+			window.close();
+			return false;
+			}
+		//-->
+		</script>
+		<div class="container">
+			<div class="row wrapper">
+				<div class="col-sm-4">
+					<div class="login">
+						<h3>Thank You</h3>
+						<small>you have just logged out</small>
+						<hr/>
+						<table class="table table-bordered table-condensed">
+							<tr><td align="right">Username</td><td width="20px" class="text-center">:</td><td>$(username)</td></tr>
+							<tr><td align="right">IP Address</td><td width="20px" class="text-center">:</td><td>$(ip)</td></tr>
+							<tr><td align="right">MAC Address</td><td width="20px" class="text-center">:</td><td>$(mac)</td></tr>
+							<tr><td align="right">Session Time</td><td width="20px" class="text-center">:</td><td>$(uptime)</td></tr>
+							$(if session-time-left)
+							<tr><td align="right">Time left</td><td width="20px" class="text-center">:</td><td>$(session-time-left)</td></tr>
+							$(endif)
+							<tr><td align="right">Bytes up/down</td><td width="20px" class="text-center">:</td><td>$(bytes-in-nice) / $(bytes-out-nice)</td></tr>
+						</table>
+						<form action="$(link-login)" name="login" onSubmit="return openLogin()">
+							<div class="row">
+								<div class="col-sm-6">
+                                    <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+                                    <a class="btn btn-info"
+                                    	href="https://sprinkvillenetworks.com/netpap/pay/safaricomwireless/sprinkvillenetworks/">Buy
+                                    	More
+                                    	Wifi Bundles</a>
+
+
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="col-sm-8">
+					<div class="row">
+						<div class="card hovercard">
+								<div class="card-background" id="netpap-root-media-2">
+								</div>
+								<div class="card-info"> <span class="card-title" id="netpap-root-media-2-header"></span>
+
+								</div>
+								        <span id="netpap-root" data-hotspot="sprinkvillechuka" data-owner="sprinkvillenetworks" data-mac-address="$(mac)"
+								        	data-banner-name="LOGIN"></span>
+
+
+						</div>
+				</div>
+			</div>
+		</div>
+		<nav class="navbar navbar-default navbar-fixed-bottom">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu" aria-expanded="false">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar top-bar"></span>
+						<span class="icon-bar middle-bar"></span>
+						<span class="icon-bar bottom-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#">
+						<img  src="img/logo.png" class="img-responsive">
+					</a>
+				</div>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="menu">
+					<ul class="nav navbar-nav navbar-right">
+					<li><a href="about.html">ABOUT</a></li>
+					<li><a href="login.html">LOGIN</a></li>
+					</ul>
+				</div><!-- /.navbar-collapse -->
+			</div>
+		</nav>
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script src="b3/js/bootstrap.min.js"></script>
+			<script src="https://account.netpap.co.ke/static/js/netpap.js"></script>
+
+	</body>
+</html>

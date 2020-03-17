@@ -1,0 +1,99 @@
+
+<html>
+	<head>
+
+		<meta http-equiv="refresh" content="60">
+
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="/favicon.ico" type="image/x-icon">
+        <title>Safaricom</title>
+		<link rel="stylesheet" href="b3/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/style.css">
+		<style type="text/css">
+		.table{
+			font-size: 13px;
+		}
+		</style>
+		<script language="JavaScript">
+		<!--
+
+			function openLogout() {
+			if (window.name != 'hotspot_status') return true;
+				open('$(link-login)/logout', 'hotspot_logout',
+				'toolbar=0,location=0,directories=0,status=0,menubars=0,resizable=1,width=280,height=250');
+			window.close();
+			return false;
+			}
+		//-->
+		</script>
+	</head>
+	<body bottommargin="0" topmargin="0" leftmargin="0" rightmargin="0"
+
+	>
+		<div class="container">
+			<div class="row wrapper">
+				<div class="col-sm-4">
+					<div class="login">
+						$(if login-by == 'trial')
+							<h3>Welcome trial user!</h3>
+						$(elif login-by != 'mac')
+							<h3>Welcome $(username)!</h3>
+						$(endif)
+						<small>enjoy your connections.</small>
+						<hr/>
+						<form action="$(link-logout)" name="logout" onSubmit="return openLogout()">
+							<table class="table table-bordered table-condensed">
+								<tr><td align="right">IP Address</td>
+								<td width="20px" class="text-center">:</td><td>$(ip)</td></tr>
+								<tr><td align="right">Bytes up/down</td>
+								<td class="text-center">:</td><td>$(bytes-in-nice) / $(bytes-out-nice)</td></tr>
+							$(if session-time-left)
+								<tr><td align="right">Connected / Left</td>
+								<td class="text-center">:</td><td>$(uptime) / $(session-time-left)</td></tr>
+							$(else)
+								<tr><td align="right">Connected</td>
+								<td class="text-center">:</td><td>$(uptime)</td></tr>
+							$(endif)
+							</table>
+							$(if login-by-mac != 'yes')
+
+							<div class="row">
+								<div class="col-sm-6">
+              <button type="submit" class="btn btn-primary btn-block">Sign Out</button>
+              <a class="btn btn-info" href="https://sprinkvillenetworks.com/netpap/pay/safaricomwirelesss/sprinkvillenetworks/">Buy More Wifi
+              	Bundles</a>
+              <span id="netpap-root" data-hotspot="sprinkvillechuka" data-owner="sprinkvillenetworks" data-mac-address="$(mac)"
+              	data-banner-name="LOGIN"></span>
+
+								</div>
+							</div>
+										$(endif)
+						</form>
+					</div>
+				</div>
+				<div class="col-sm-8">
+					<div class="row">
+						<div class="card hovercard">
+								<div class="card-background" id="netpap-root-media-2">
+								</div>
+
+								<div class="card-info"> <span class="card-title" id="netpap-root-media-2-header"></span>
+
+								</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+        <script src="b3/js/bootstrap.min.js"></script>
+				<script src="https://netpap.co.ke/static/js/netpap.js"></script>
+
+
+
+	</body>
+</html>
